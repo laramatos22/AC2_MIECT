@@ -54,11 +54,11 @@ do:	li 	$v0, putChar
 	ori 	$t4, $t3, 10	# $t4 = 10 | 3 << 16
 	move 	$a0, $t0	# $a0 = $t0 = cnt
 	move 	$a1, $t4	# $a1 = $t4
-	syscall		# printInt( cnt, 10 | 3 << 16 );
+	syscall			# printInt( cnt, 10 | 3 << 16 );
 	
 	li 	$v0, putChar
 	la 	$a0, '\t'
-	syscall		# putChar('\t');
+	syscall			# putChar('\t');
 
 	li 	$v0, printInt
 	li 	$t2, 8		# $t2 = 8
@@ -66,7 +66,7 @@ do:	li 	$v0, putChar
 	ori 	$t4, $t3, 2	# $t4 = 2 | 8 << 16
 	move 	$a0, $t0	# $a0 = $t0 = cnt
 	move 	$a1, $t4	# $a1 = $t4
-	syscall		# printInt( cnt, 2 | 8 << 16 );
+	syscall			# printInt( cnt, 2 | 8 << 16 );
 
 	li 	$a0, 5
 	jal wait		# chamada à sub-rotina wait(5);
