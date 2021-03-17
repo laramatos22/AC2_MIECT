@@ -86,25 +86,25 @@ main:
 	
 	li 	$v0, printStr
 	la 	$a0, msg1
-	syscall			# printStr("Introduzir Primeira String: ");
+	syscall				# printStr("Introduzir Primeira String: ");
 	
 	li 	$v0, readStr
 	la 	$a0, str1
 	ori $a1, $0, 20
-	syscall			# readStr( str1, STR_MAX_SIZE );
+	syscall				# readStr( str1, STR_MAX_SIZE );
 	
 	li 	$v0, printStr
 	la 	$a0, msg2
-	syscall			# printStr("Introduzir Segunda String: ");
+	syscall				# printStr("Introduzir Segunda String: ");
 	
 	li 	$v0, readStr
 	la 	$a0, str2
 	ori $a1, $0, 20
-	syscall			# readStr( str2, STR_MAX_SIZE );
+	syscall				# readStr( str2, STR_MAX_SIZE );
 	
 	li 	$v0, printStr
 	la 	$a0, msg3
-	syscall			# printStr("Resultados:\n");
+	syscall				# printStr("Resultados:\n");
 	
 	li 	$v0, printStr
 	la 	$a0, msg4		# printStr("Length First String: ");
@@ -115,11 +115,11 @@ main:
 	move 	$a0, $v0
 	li 	$a1, 10
 	li 	$v0, printInt
-	syscall			# prinInt( strlen(str1), 10 );
+	syscall				# prinInt( strlen(str1), 10 );
 	
 	li 	$v0, printStr
 	la 	$a0, msg5
-	syscall			# printStr("Length Second String: ");
+	syscall				# printStr("Length Second String: ");
 	
 	la 	$a0, str2
 	jal 	strlen			# strlen ( str2 )
@@ -138,7 +138,7 @@ main:
 	
 	move 	$a0, $v0
 	li	$v0, printStr
-	syscall			# printStr( strcat(str3, str2) );
+	syscall				# printStr( strcat(str3, str2) );
 	
 	la	$a0, str1
 	la	$a1, str2
@@ -146,7 +146,7 @@ main:
 	
 	move	$a0, $v0
 	li	$v0, printInt10
-	syscall			# printInt10( strcmp(str1, str2) );
+	syscall				# printInt10( strcmp(str1, str2) );
 	
 	lw 	$ra, 0($sp)
 	addiu $sp, $sp, 4
@@ -220,7 +220,7 @@ strcmp:
 cmpFor:
 	lb	$t0, 0($a0)
 	lb	$t1, 0($a1)
-	bne $t0, $t1, endCmpFor	# (*s1 == *s2)
+	bne $t0, $t1, endCmpFor		# (*s1 == *s2)
 	beq $t0, '\0', endCmpFor	# (*s1 != '\0')
 	addiu $a0, $a0, 1		# s1++
 	addiu $a1, $a1, 1		# s2++
