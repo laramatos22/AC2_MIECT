@@ -28,7 +28,7 @@ if:	move 	$a0, $v0
 	li 	$v0, putChar
 	syscall
 	
-while: bne 	$a0, '\n', do
+while: 	bne $a0, '\n', do
 	
 	li $v0, 0
 	jr $ra
