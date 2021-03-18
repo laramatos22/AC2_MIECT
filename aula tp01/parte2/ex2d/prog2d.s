@@ -36,7 +36,7 @@ main:
 
 while:	li 	$v0, printStr	
 	la 	$a0, str1
-	syscall		# printStr("\nIntroduza um numero (sinal e módulo): ");
+	syscall			# printStr("\nIntroduza um numero (sinal e módulo): ");
 	
 	li 	$v0, readInt10
 	syscall
@@ -44,38 +44,38 @@ while:	li 	$v0, printStr
 	
 	li 	$v0, printStr
 	la $a0, str2
-	syscall		# printStr("\nValor lido, em base 2: ");
+	syscall			# printStr("\nValor lido, em base 2: ");
 	
 	li 	$v0, printInt
 	move 	$a0, $t0
 	li 	$a1, 2
-	syscall		# printInt(value, 2);
+	syscall			# printInt(value, 2);
 	
 	li	$v0, printStr
 	la 	$a0, str3
-	syscall		# printStr("\nValor lido, em base 16: ");
+	syscall			# printStr("\nValor lido, em base 16: ");
 	
 	li 	$v0, printInt
 	move 	$a0, $t0
 	li 	$a1, 16
-	syscall		# printInt(value, 16);
+	syscall			# printInt(value, 16);
 	
 	li	$v0, printStr
 	la 	$a0, str4
-	syscall		# printStr("\nValor lido, em base 10 (unsigned): ");
+	syscall			# printStr("\nValor lido, em base 10 (unsigned): ");
 	
 	li	$v0, printInt
 	move 	$a0, $t0
 	li 	$a1, 10
-	syscall		# printInt(value, 10);
+	syscall			# printInt(value, 10);
 	
 	li 	$v0, printStr
 	la 	$a0, str5
-	syscall		# printStr("\nValor lido, em base 10 (signed): ");
+	syscall			# printStr("\nValor lido, em base 10 (signed): ");
 	
 	li 	$v0, printInt10
 	move 	$a0, $t0
-	syscall		# printInt10(value);
+	syscall			# printInt10(value);
 	
 	j 	while
 	
