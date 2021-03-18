@@ -20,13 +20,13 @@
 	.globl main
 	
 main:	li	$v0, getChar		# $v0 = getChar
-	syscall			# getChar()
+	syscall				# getChar()
 	
 	move 	$a0, $v0		# $a0 = c = getChar();
 	
 if:	beq 	$a0, '0', while
 	li 	$v0, putChar		# $v0 = putChar(c);
-	syscall			# putChar(c);
+	syscall				# putChar(c);
 	
 while:	bne $a0, '\n', main		# while( c != '\n' );
 	
