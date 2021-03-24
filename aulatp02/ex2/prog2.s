@@ -40,7 +40,7 @@ while:
         li 	$a0, 100
         jal delay
       
-        addi 	$t0,$t0,1              	# counter++
+        addi 	$t0,$t0,1              		# counter++
         move 	$a0, $t0
         li 	$a1,0x0004000A           	#10 | 4 << 16 = 0x0004000A
         li 	$v0, PRINT_INT           	# printInt(++counter, 10 | 4 << 16);
@@ -70,7 +70,7 @@ for:
 	ble 	$a0, 0, endFor			# for(ms > 0)
 	sub 	$a0, $a0, 1			# ms--
 	li 	$v0, RESET_CORE_TIMER
-	syscall				# reset_core_timer()
+	syscall					# reset_core_timer()
 	
 delayWhile:
 	li 	$v0, READ_CORE_TIMER
