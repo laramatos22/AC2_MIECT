@@ -34,7 +34,7 @@ while:
 	jal 	delay			# delay(100)
 	
 	li	$v0, INKEY
-	syscall			# inkey() -> leitura do caracter
+	syscall				# inkey() -> leitura do caracter
 	
 	move 	$t4, $v0
 	
@@ -103,7 +103,7 @@ for:
 	ble 	$a0, 0, endFor			# for(ms > 0)
 	sub 	$a0, $a0, 1			# ms--
 	li 	$v0, RESET_CORE_TIMER
-	syscall				# reset_core_timer()
+	syscall					# reset_core_timer()
 	
 delayWhile:
 	li 	$v0, READ_CORE_TIMER
