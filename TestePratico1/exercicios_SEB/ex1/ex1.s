@@ -110,6 +110,7 @@ endForDelay:
         sw   $t2, LATE($t1)             #       write (LATE register)
 
 end:
+	j while
         jr $ra
 
 
