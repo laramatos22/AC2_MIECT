@@ -16,7 +16,6 @@
         .equ LATE,  0x6120              # LATE  address is 0xBF886120
 
         .equ getChar, 2
-	.equ putChar, 3
         .equ printStr, 8
         .equ readCoreTimer, 11
         .equ resetCoreTimer, 12
@@ -31,9 +30,9 @@ main:
         lw   $t2, LATE($t1)             #       read (LATE register)
         andi $t2, $t2, 0xFFE0           #       configure RE0 as output (RE0 = 0) -> 0x1111 1111 1111 1110
         sw   $t2, LATE($t1)             #       write (LATE register)
-        lw   $t2, TRISE($t1)            # read (TRISE register)
-        andi $t2, $t2, 0xFFE0           # configure RE0 = RE1 = RE2 = RE3 = 0 output -> 0x1111 1111 1111 0000
-        sw   $t2, TRISE($t1)            # write (TRISE register)
+        lw   $t2, TRISE($t1)            # 	read (TRISE register)
+        andi $t2, $t2, 0xFFE0           # 	configure RE0 = RE1 = RE2 = RE3 = 0 output -> 0x1111 1111 1111 0000
+        sw   $t2, TRISE($t1)            # 	write (TRISE register)
 
 while:
         la   $a0, str
