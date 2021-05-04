@@ -41,12 +41,12 @@ int main(void)
 
     char firstChar = 'F', lastChar = 'F';
 
-    int valueToSend0 = 0x7100;
-    int valueToSend1 = 0x7100;
+    int valueToSend0 = 0x7100;          // F -> 0x0111 0001 0000 0000
+    int valueToSend1 = 0x7100;          // F -> 0x0111 0001 0000 0000
     
     // Configurar PORTS
-    TRISB = (TRISB & 0x80FF);           // Configure RB14 to RB8 as outputs
-    TRISD = (TRISD & 0xFF9F);           // Configure RD6 and RD5 as outputs
+    TRISB = (TRISB & 0x80FF);           // Configure RB14 to RB8 as outputs -> 0x1000 0000 1111 1111
+    TRISD = (TRISD & 0xFF9F);           // Configure RD6 and RD5 as outputs -> 0x1111 1111 1001 1111
 
     printStr("\nCarregar numa tecla: ");
 
@@ -56,43 +56,36 @@ int main(void)
 
         if (firstChar == '0')
         {
-            valueToSend0 = 0x3F00;      // 0 from Display value 00
+            valueToSend0 = 0x3F00;      // 0 from Display value 00 -> 0x0011 1111 0000 0000 
             valueToSend1 = 0x3F00;      // 0 from Display value 00
             lastChar = '0';
         }
 
         else if (firstChar == '1')
         {
-            valueToSend0 = 0x0600;      // 1 from Display value 01
+            valueToSend0 = 0x0600;      // 1 from Display value 01 -> 0x0000 0110 0000 0000
             valueToSend1 = 0x3F00;      // 0 from Display value 01
             lastChar = '1';
         }
         
         else if (firstChar == '2')
         {
-            valueToSend0 = 0x5B00;      // 2 from Display value 02
+            valueToSend0 = 0x5B00;      // 2 from Display value 02 -> 0x0101 1011 0000 0000
             valueToSend1 = 0x3F00;      // 0 from Display value 02
             lastChar = '2';
         }
 
         else if (firstChar == '3')
         {
-            valueToSend0 = 0x4F00;      // 3 from Display value 03
+            valueToSend0 = 0x4F00;      // 3 from Display value 03 -> 0x0100 1111 0000 0000
             valueToSend1 = 0x3F00;      // 0 from Display value 03
             lastChar = '3';
         }
 
-        else if (firstChar == '4')
-        {
-            valueToSend0 = 0x6600;      // 2 from Display value 04
-            valueToSend1 = 0x3F00;      // 0 from Display value 04
-            lastChar = '4';
-        }
-
         else if (firstChar != '\0')
         {
-            valueToSend0 = 0x7100;      // 2 from Display value FF
-            valueToSend1 = 0x7100;      // 0 from Display value FF
+            valueToSend0 = 0x7100;      // F from Display value FF
+            valueToSend1 = 0x7100;      // F from Display value FF
             lastChar = firstChar;
         }
         
