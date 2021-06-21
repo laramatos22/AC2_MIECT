@@ -42,6 +42,7 @@ void send2displays(unsigned char value)
 
     // send digit_high (dh) to display_high: dh = value >> 4
     unsigned char digit_high = value >> 4;                          // Get the index of the decimal part
+    
     // send digit_low (dl) to display_low: dl = value & 0x0F
     unsigned char digit_low = value & 0x0F;                         // Get the index of the unitary part
 
@@ -59,7 +60,7 @@ void send2displays(unsigned char value)
     else
     {
         LATD = (LATD | 0x0020) & 0xFFBF;                                // Displya High inactive and Display Low active
-        LATB = (LATB & 0x80FF) | (unsigned int)(digit_low) << 8;        // Clean display and set the right value
+        LATB = (LATB & 0x80FF) | (unsigned int)(digit_high) << 8;       // Clean display and set the right value
     }      
     // toggle "displayFlag" variable
     displayFlag = !displayFlag;
