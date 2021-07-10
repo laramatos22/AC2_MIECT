@@ -2,7 +2,7 @@
 
 void config();
 void setPWM(int dutycycle);
-void delay(int micros); //micros = microsegundos
+void delay(int ms); 
 
 int main(void) {
 
@@ -30,9 +30,8 @@ int main(void) {
             setPWM(70);
         }
         
-        // T = 250 microsegundos = 250x10*-6 seg
-        // f = 1/T = 1/(250*10⁻6) = 4000 Hz = 4MHz
-        delay(250); //delay de 250 microsegundos
+        // T = 250 milisegundos 
+        delay(250); 
         
     }
 
@@ -65,8 +64,8 @@ void setPWM(int dutycycle) {
 
 }
 
-void delay(int micros){
-    for(;micros > 0; micros--){
+void delay(int ms){
+    for(;ms > 0; ms--){
         resetCoreTimer();
         while(readCoreTimer() < 5000);
     }
