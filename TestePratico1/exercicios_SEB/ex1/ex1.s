@@ -28,7 +28,7 @@ str:    .asciiz "\nCarregar numa tecla: "
 main:
         lui  $t1, SFR_BASE_HI
         lw   $t2, LATE($t1)             #       read (LATE register)
-        andi $t2, $t2, 0xFFE0           #       configure RE0 as output (RE0 = 0) -> 0x1111 1111 1111 1110
+        andi $t2, $t2, 0xFFFE           #       configure RE0 as output (RE0 = 0) -> 0x1111 1111 1111 1110
         sw   $t2, LATE($t1)             #       write (LATE register)
         lw   $t2, TRISE($t1)            # 	read (TRISE register)
         andi $t2, $t2, 0xFFE0           # 	configure RE0 = RE1 = RE2 = RE3 = 0 output -> 0x1111 1111 1111 0000
