@@ -128,7 +128,7 @@ unsigned char toBcd(unsigned char value) {
 void delay(int ms){
     for(;ms > 0; ms--){
         resetCoreTimer();
-        while(readCoreTimer() > 20000);
+        while(readCoreTimer() < 20000);
     }
 }
 
