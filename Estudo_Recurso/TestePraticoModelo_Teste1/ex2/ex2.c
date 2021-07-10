@@ -26,8 +26,8 @@ int main(void) {
             do
             {
                 send2displays(c-0x30);
-                delay(10);      // T = 10 microsegundos = 10x10⁻6 segundos
-                                // f = 1 / T = 1 / (10*10⁻6) = 100000 Hz = 100 MHz
+                delay(10);      // T = 10 milisegundos = 10x10⁻3 segundos
+                                // f = 1 / T = 1 / (10*10⁻3) = 100 Hz
             } while (++i < 20);
             
         } else
