@@ -1,0 +1,22 @@
+GAS LISTING ex1.s 			page 1
+
+
+DEFINED SYMBOLS
+               ex1.s:1      *ABS*:000000000000bf88 UPPER_SFR
+               ex1.s:2      *ABS*:0000000000006100 TRISE
+               ex1.s:3      *ABS*:0000000000006120 LATE
+               ex1.s:5      *ABS*:000000000000000b readCoreTimer
+               ex1.s:6      *ABS*:000000000000000c resetCoreTimer
+               ex1.s:7      *ABS*:0000000000000002 readChar
+               ex1.s:13     .text:0000000000000000 main
+               ex1.s:23     .text:000000000000001c while
+               ex1.s:32     .text:000000000000003c else1
+               ex1.s:55     .text:0000000000000090 endif
+               ex1.s:38     .text:0000000000000054 else2
+               ex1.s:44     .text:000000000000006c else3
+               ex1.s:50     .text:0000000000000084 else4
+               ex1.s:75     .text:00000000000000c8 delay
+               ex1.s:83     .text:00000000000000f4 endFor
+               ex1.s:78     .text:00000000000000d8 while2
+
+NO UNDEFINED SYMBOLS
